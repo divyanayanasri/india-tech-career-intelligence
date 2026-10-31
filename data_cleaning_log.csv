@@ -1,0 +1,7 @@
+Issue / Check,Affected Column(s),Findings / Diagnosis,Action Taken / Treatment,Records Impacted
+Full Row Duplicates,All Columns,Found 0 duplicate records,Retained unique records; verified 100% unique records,0
+Datetime Parsing: posted_date,posted_date,"Initial nulls: 0, Unparseable: 0",Explicitly parsed using dayfirst=True with errors handled safely,0
+Datetime Parsing: application_deadline,application_deadline,"Initial nulls: 0, Unparseable: 0",Explicitly parsed using dayfirst=True with errors handled safely,0
+Date Logic Sequence,"posted_date, application_deadline",0 listings had posted > deadline,Verified chronological ordering (posted_date <= application_deadline),0
+Metric Type Conversion,career_growth_index,Stored as percentage text with '%' symbol,Stripped '%' and converted to numeric float in 'career_growth_index_numeric',100000
+Missingness Disclosure,probation_period,"33,499 missing values (33.50%)",Disclosed and documented missingness without arbitrary imputation,33499
