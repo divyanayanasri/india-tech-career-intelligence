@@ -1,6 +1,7 @@
 Issue / Check,Affected Column(s),Findings / Diagnosis,Action Taken / Treatment,Records Impacted
 Full Row Duplicates,All Columns,Found 0 duplicate records,Retained unique records; verified 100% unique records,0
 Missingness Disclosure,probation_period,"33,499 missing values (33.5%)",Disclosed and documented transparently; avoided arbitrary imputation,33499
+Missing Value Treatment,probation_period,"33,499 NaN records identified (33.5% of dataset)",Imputed with 'Not Specified'; added 'has_probation_disclosed' boolean indicator without deleting records,33499
 Category Consistency,"work_mode, experience_level, employment_type, company_size",Inspected distinct values across core categoricals,Stripped whitespace and verified standardized casing,100000
 Numeric Logic Audit,"salary_minimum, salary_maximum","Negative: 0, Min > Max: 0",Verified non-negative salary bounds and valid min <= max logical consistency,0
 Datetime Parsing: posted_date,posted_date,"Initial nulls: 0, Unparseable: 0",Explicitly parsed using dayfirst=True (DD-MM-YYYY) with errors coerced safely,0
